@@ -47,7 +47,9 @@ passport.use('jwt', jwtStrategy);
 if (config.env === 'production') {
   app.use('/v1/auth', authLimiter);
 }
-
+app.get('/', (req, res) => {
+  res.send('Hello World!');
+});
 // v1 api routes
 app.use('/v1', routes);
 
